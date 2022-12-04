@@ -40,7 +40,7 @@ module user_project_wrapper (user_clock2,
  input [3:0] wbs_sel_i;
 
 
- user_proj_example mprj (.vdd(vdd),
+ wrapped_wb_hyperram wrapped_wb_hyperram (.vdd(vdd),
     .vss(vss),
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
@@ -162,9 +162,6 @@ module user_project_wrapper (user_clock2,
     io_out[2],
     io_out[1],
     io_out[0]}),
-    .irq({user_irq[2],
-    user_irq[1],
-    user_irq[0]}),
     .la_data_in({la_data_in[63],
     la_data_in[62],
     la_data_in[61],

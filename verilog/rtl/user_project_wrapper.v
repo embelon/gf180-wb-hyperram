@@ -70,7 +70,7 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+wrapped_wb_hyperram wrapped_wb_hyperram (
 `ifdef USE_POWER_PINS
 	.vdd(vdd),	// User area 1 1.8V power
 	.vss(vss),	// User area 1 digital ground
@@ -100,10 +100,7 @@ user_proj_example mprj (
 
     .io_in (io_in),
     .io_out(io_out),
-    .io_oeb(io_oeb),
-
-    // IRQ
-    .irq(user_irq)
+    .io_oeb(io_oeb)
 );
 
 endmodule	// user_project_wrapper
